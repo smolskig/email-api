@@ -20,6 +20,6 @@ app.post('/send', function (req, res) {
   })
 })
 
-app.listen(3000,()=>{
-  console.log('Servidor escutando na porta 3000')
+app.listen(process.env.PORT || 8000,()=>{
+  console.log('Servidor escutando na porta 8000')
 })
