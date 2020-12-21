@@ -5,9 +5,14 @@ const bodyParser = require('body-parser');
 const app = express();
 let cors = require('cors')
 
+let corsOptions = {
+  origin: process.env.ORIGIN,
+  optionsSuccessStatus: 200
+}
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors(corsOptions))
 
 
 app.post('/send', function (req, res) {
