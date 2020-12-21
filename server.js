@@ -3,9 +3,12 @@ const express = require('express')
 const handleSendEmail = require('./src/mailController')
 const bodyParser = require('body-parser');
 const app = express();
+let cors = require('cors')
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors())
+
 
 app.post('/send', function (req, res) {
   handleSendEmail(req.body)
