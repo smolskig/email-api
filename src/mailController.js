@@ -2,8 +2,7 @@ const nodemailer = require("nodemailer");
 
 const handleSendEmail = async (data) => {
   let transporter = nodemailer.createTransport({
-    host: process.env.HOST,
-    port: process.env.EMAIL_PORT,
+    service: "gmail",
     secure: false,
     auth: {
       user: process.env.USER,
@@ -17,6 +16,6 @@ const handleSendEmail = async (data) => {
     subject: `Nova mensagem de: ${data.name} - ${data.email}`,
     text: data.text,
   });
-}
+};
 
-module.exports = handleSendEmail
+module.exports = handleSendEmail;
