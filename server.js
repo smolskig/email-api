@@ -10,11 +10,11 @@ let corsOptions = {
   optionsSuccessStatus: 200,
 };
 
+app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
 
-app.post("/send", function (req, res) {
+app.post("/send", cors(corsOptions), function (req, res) {
   handleSendEmail(req.body)
     .then(() => {
       res.status(200).send({
