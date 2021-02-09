@@ -6,7 +6,7 @@ const app = express();
 let cors = require("cors");
 
 let corsOptions = {
-  origin: process.env.ORIGIN,
+  origin: "https://hmaxeletrica.com.br",
   optionsSuccessStatus: 200,
 };
 
